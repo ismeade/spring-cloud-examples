@@ -1,0 +1,11 @@
+# 此文件加载优先于jar中的application
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:8888/
+      username: user
+      password: 1234567

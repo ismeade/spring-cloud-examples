@@ -9,7 +9,12 @@ spring:
           searchPaths: config-repo
 #          username: ********
 #          password: ********
-      label: master
+#          basedir: 配置文件临时目录
+#      label: master
+# 需要引入spring-boot-starter-security
+security:
+  user:
+    name: user
+    password: 1234567
 server:
   port: 8888
-
