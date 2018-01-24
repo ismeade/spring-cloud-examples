@@ -4,13 +4,15 @@ server:
 eureka:
   instance:
     hostname: localhost
+    # 心跳间隔，默认30秒
+    #lease-renewal-interval-in-seconds: 30
+    # 服务失效时间，默认90秒
+    #lease-expiration-duration-in-seconds: 90
+  # 关闭保护机制，以确保注册中心将不可用的实例正确剔除
+  #server:
+  #  enable-self-preservation: false
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
-logging:
-  pattern:
-    console: "%d - %msg%n"
-  path: ./log/
