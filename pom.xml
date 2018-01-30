@@ -16,6 +16,7 @@
         <module>service-zuul</module>
         <module>config-server</module>
         <module>config-client</module>
+        <module>stream-rabbit</module>
     </modules>
 
 </project>

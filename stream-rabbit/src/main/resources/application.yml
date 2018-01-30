@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: service-hi
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: xxxx
+  cloud:
+    stream:
+      bindings:
+        input:
+          group: test-1
+          destination: test
+          # 消费者数量
+          concurrency: 3
+          # 消息最大重试次数 默认3
+          #maxAttempts: 3
+      rabbit:
+        bindings:
+          input:
+            consumer:
+              maxConcurrency: 3
+              bindingRoutingKey: a.#
+              # ack模式 NONE MANUAL AUTO
+              acknowledgeMode: MANUAL
+

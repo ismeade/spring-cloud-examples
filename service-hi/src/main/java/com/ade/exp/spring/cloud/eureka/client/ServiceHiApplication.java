@@ -28,4 +28,9 @@ public class ServiceHiApplication {
         return "hi "+name+",i am from port:" + port;
     }
 
+    @RequestMapping("/ha")
+    public String ha(@RequestParam String name) {
+        return "ha "+name;
+    }
+
 }

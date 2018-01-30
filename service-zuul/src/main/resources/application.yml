@@ -9,9 +9,9 @@ spring:
     name: service-zuul
 zuul:
   routes:
-    api-a:
-      path: /api-a/**
-      serviceId: service-ribbon
-    api-b:
-      path: /api-b/**
-      serviceId: service-feign
+#    api-a:
+#      path: /
+#      serviceId: https://www.baidu.com/
+    hi: # 仅仅是个名字 path才是路由规则
+      path: /ha/**
+      serviceId: service-hi
