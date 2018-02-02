@@ -18,3 +18,8 @@ security:
     password: 1234567
 server:
   port: 8888
+
+# 读取application-{value}.tml/properties配置文件，还可以通过环境变量覆盖这个这是
+spring:
+  profiles:
+    active: uat

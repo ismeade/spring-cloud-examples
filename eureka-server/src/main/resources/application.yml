@@ -1,18 +1,24 @@
+spring:
+  application:
+    name: eureka-server
 server:
   port: 8761
-
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${spring.application.name}
     # 心跳间隔，默认30秒
     #lease-renewal-interval-in-seconds: 30
     # 服务失效时间，默认90秒
     #lease-expiration-duration-in-seconds: 90
   # 关闭保护机制，以确保注册中心将不可用的实例正确剔除
   #server:
-  #  enable-self-preservation: false
+    #enable-self-preservation: false
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#security:
+#  user:
+#    name: open-api
+#    password: q1w2e3r4

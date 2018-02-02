@@ -2,10 +2,10 @@ spring:
   application:
     name: service-hi
   rabbitmq:
-    host: 127.0.0.1
+    host: localhost
     port: 5672
-    username: admin
-    password: xxxx
+    username: guest
+    password: guest
   cloud:
     stream:
       bindings:
@@ -16,6 +16,8 @@ spring:
           concurrency: 3
           # 消息最大重试次数 默认3
           #maxAttempts: 3
+        output:
+          destination: test
       rabbit:
         bindings:
           input:
@@ -24,4 +26,5 @@ spring:
               bindingRoutingKey: a.#
               # ack模式 NONE MANUAL AUTO
               acknowledgeMode: MANUAL
+
 
