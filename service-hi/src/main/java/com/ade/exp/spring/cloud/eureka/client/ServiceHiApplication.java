@@ -24,8 +24,9 @@ public class ServiceHiApplication {
     private String port;
 
     @RequestMapping("/hi")
-    public String home(@RequestParam String name) {
-        return "hi "+name+",i am from port:" + port;
+    public String home(@RequestParam("name") String name, @RequestParam("age") Integer age) {
+        if ("a".equals(name)) throw new IllegalArgumentException("a exception");
+        return "hi " + name + " " + age + ",i am from port:" + port;
     }
 
 }

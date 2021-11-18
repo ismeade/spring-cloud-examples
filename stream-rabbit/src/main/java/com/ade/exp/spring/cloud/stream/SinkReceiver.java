@@ -10,6 +10,8 @@ import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.MessageHandler;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.support.MessageBuilder;
 
@@ -44,6 +46,7 @@ public class SinkReceiver {
     public void send() {
         // 没有解决 动态指定RoutingKey
         channel.send(MessageBuilder.withPayload("abc").build());
+
     }
 
 }

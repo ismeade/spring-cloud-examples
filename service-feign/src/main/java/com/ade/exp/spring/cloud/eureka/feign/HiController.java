@@ -15,9 +15,10 @@ public class HiController {
     @Autowired
     private SchedualServiceHi schedualServiceHi;
 
-    @RequestMapping(value = "/hi_feign",method = RequestMethod.GET)
-    public String sayHi(@RequestParam String name){
-        return schedualServiceHi.sayHiFromClientOne(name);
+    @RequestMapping(value = "/hi_feign", method = RequestMethod.GET)
+    public String sayHi(@RequestParam String name, @RequestParam Integer age){
+        System.out.println("sayHi");
+        return schedualServiceHi.sayHiFromClientOne(name, age);
     }
 
 }

@@ -8,10 +8,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * Created by liyang on 17-10-13.
  */
-@FeignClient(value = "service-hi", fallback = SchedualServiceHiHystric.class)
+@FeignClient(value = "service-hi",
+//        fallback = SchedualServiceHiHystric.class
+        fallbackFactory = HiFallbackFactory.class
+)
 public interface SchedualServiceHi {
 
     @RequestMapping(value = "/hi",method = RequestMethod.GET)
-    String sayHiFromClientOne(@RequestParam(value = "name") String name);
+    String sayHiFromClientOne(@RequestParam("name") String name, @RequestParam("age") Integer age);
+//    String sayHiFromClientOne(@RequestParam("name") String name, @RequestParam("age") Integer age);
 
 }
